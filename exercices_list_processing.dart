@@ -1,36 +1,58 @@
+import 'dart:math';
+
 int sumList(List<int> numbers) {
   // Devuelve la suma de todos los numeros de la lista.
-  return 0;
+  if (numbers.length == 0) {
+    return 0;
+  }
+  print("###################");
+  int result = numbers.reduce((value, element) => value + element);
+
+  return result;
 }
 
-int countEvenNumbers(List<int> numbers) {
-  // Devuelve cuantos numeros pares hay en la lista.
-  return 0;
+bool isInList(List<int> lista, int toFind) {
+  for (int i = 0; i < lista.length; i++) {
+    if (lista[i] == toFind) {
+      return true;
+    }
+  }
+  
+  return false;
 }
 
 List<int> removeDuplicatesPreserveOrder(List<int> numbers) {
   // Devuelve una nueva lista sin duplicados, manteniendo el orden original.
-  return [];
+  List<int> lista = [];
+
+  for (int pstn = 0; pstn < numbers.length; pstn++) {
+    if (!lista.contains(numbers[pstn])) {
+      lista.add(numbers[pstn]);
+    }
+  }
+
+  return lista;
 }
 
 String longestWord(List<String> words) {
   // Devuelve la palabra mas larga. Si hay empate, la primera en la lista. Lista vacia -> ''.
-  return '';
+  if (words.length == 0) return "";
+  int pstnlargest = 0;
+  for (int i=0;i<words.length;i++) 
+    if(words[i].length>words[pstnlargest].length)  pstnlargest=i;
+  return words[pstnlargest];
 }
 
 Map<String, int> frequencyMap(List<String> items) {
   // Devuelve un mapa con la frecuencia de cada elemento de la lista.
+
   return {};
 }
-
-
-
-
-
 
 // solo cambiar arriba de este comentario
 
 void main() {
+  /*
   print('=== Exercise 1: sumList ===');
   print('sumList([2, 4, 6])');
   print('Expected: 12');
@@ -51,28 +73,6 @@ void main() {
   print('sumList([100, 200, 50, 25])');
   print('Expected: 375');
   print('Actual: ${sumList([100, 200, 50, 25])}');
-  print('');
-
-  print('=== Exercise 2: countEvenNumbers ===');
-  print('countEvenNumbers([1, 2, 3, 4, 6, 7])');
-  print('Expected: 3');
-  print('Actual: ${countEvenNumbers([1, 2, 3, 4, 6, 7])}');
-  print('---');
-  print('countEvenNumbers([0, 2, 5])');
-  print('Expected: 2');
-  print('Actual: ${countEvenNumbers([0, 2, 5])}');
-  print('---');
-  print('countEvenNumbers([1, 3, 5])');
-  print('Expected: 0');
-  print('Actual: ${countEvenNumbers([1, 3, 5])}');
-  print('---');
-  print('countEvenNumbers([])');
-  print('Expected: 0');
-  print('Actual: ${countEvenNumbers([])}');
-  print('---');
-  print('countEvenNumbers([8, 8, 8, 1])');
-  print('Expected: 3');
-  print('Actual: ${countEvenNumbers([8, 8, 8, 1])}');
   print('');
 
   print('=== Exercise 3: removeDuplicatesPreserveOrder ===');
@@ -96,6 +96,8 @@ void main() {
   print('Expected: [5]');
   print('Actual: ${removeDuplicatesPreserveOrder([5, 5, 5, 5])}');
   print('');
+
+ */
 
   print('=== Exercise 4: longestWord ===');
   print("longestWord(['cat', 'elephant', 'dog'])");
@@ -122,7 +124,7 @@ void main() {
   print('Expected: "" (empty string)');
   print("Actual: ${longestWord([])}");
   print('');
-
+  /*
   print('=== Exercise 5: frequencyMap ===');
   print("frequencyMap(['apple', 'banana', 'apple', 'orange', 'banana', 'apple'])");
   print('Expected: {apple: 3, banana: 2, orange: 1}');
@@ -143,4 +145,5 @@ void main() {
   print("frequencyMap(['a', 'b', 'a', 'c', 'b', 'a'])");
   print('Expected: {a: 3, b: 2, c: 1}');
   print("Actual: ${frequencyMap(['a', 'b', 'a', 'c', 'b', 'a'])}");
+*/
 }

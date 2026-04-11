@@ -1,4 +1,6 @@
-void printList(List<String> players) {
+import 'dart:collection';
+
+/*void printList(List<String> players) {
   int player = 0;
   while(player < players.length) {
     print (players[player]);
@@ -45,20 +47,69 @@ void multiplication() {
 List<int> reverseList(List<int> toReverse) {
 
   List<int> numbers = [];
-  for(int number= 0;numbers.length<toReverse.length+1; number++){
-  numbers.add(toReverse.lengt-number[toReverse]);
+  for(int number= 0;numbers.length < toReverse.length ; ){
+    number= number + 1;
+    //print("numbers = $numbers - number = $number ");
+    numbers.add(toReverse[toReverse.length - number]);
+  
+    
+  }
+ return numbers;
+  
+}
+void fortest (){
+
+
+
+
+
+}
+
+
+
+
+*/
+void lista (){
+
+  List<String> nombres = ['Fran', 'Richi', 'Alejandro', 'Yo', 'michael', 'Sebas', 'Kinam', 'Emiliano', 'Emiliana'];
+  int val = 0;
+  List<int> nlist = [];
+  for(int pstn=0;pstn<nombres.length;pstn++){
+
+    val=nombres[pstn].length;
+    nlist.add(val);
 
   }
 
-  return numbers;
+  int mayor = nlist[0];
+  for(int elemento in nlist ){
+    if(elemento > mayor ){
+     mayor = elemento;
+    }
+
+
+  }
+
+  
+  int posicion=0;
+  for( int custer= 0,  posn= 0;custer< mayor;posn++){
+    custer= nlist[posn];
+    posicion++;
+    
+  }
+  
+  print("el nombre más largo de la lista es: ${nombres[posicion-1]}");
+
 }
+
+
+
 
 void main() {
 
-  print(reverseList([1,2,3,4,5,6,7,8,9]));
+  lista();
   
-  
-  return;
+ 
 }
 
 
