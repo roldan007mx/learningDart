@@ -32,14 +32,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  List<String> userInput = ["oui"];
+  List<Map<String, bool>> tasks = [];
+  String userInput = "";
 
-  void _incrementCounter() {
-    setState(() {
-      _counter += 2;
-    });
+ 
+
+  void changeuserinput(String newuserInput){
+   setState(() {
+     userInput= newuserInput;
+   });
+
   }
 
   @override
@@ -48,15 +51,17 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(centerTitle: true, title: Text(widget.title)),
       body: Center(
         child: Column(
-          children: [Text("you typed ${_counter} times"),
-          Column(
-            children: List.generate(userInput.length, (iterator) => Text(userInput[iterator])),
-          )
+          children: [Text("you typed  times"),
+          TextField( onChanged: changeuserinput,),
+          Text(userInput) 
+//           Column(
+//            children: List.generate(userInput.length, (iterator) => Text(userInput[iterator])),
+//          )
           ]
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: (){},
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
